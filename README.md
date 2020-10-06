@@ -13,5 +13,6 @@ heroku logs -t
 ```
 heroku ps:exec -d worker.1
 ps xf
+kill -TERM 1234
 ```
 
