@@ -1,4 +1,5 @@
 #!/usr/bin/ruby
+$stdout.sync = true
 
 puts "Starting parent: #{Process.pid}"
 Signal.trap("TERM") do
