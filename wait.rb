@@ -23,8 +23,8 @@ end
 system 'ps xf'
 
 children.each do |child|
-  pid, status = Process.waitpid2(child)
-  puts "Child #{pid} exited with status #{status}"
+  pid, s = Process.waitpid2(child)
+  puts "Child #{pid} exited with status #{s.exitstatus}"
 end
 
 sleep 30*3600
