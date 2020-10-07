@@ -20,6 +20,8 @@ children = []
   end
 end
 
+system 'ps xf'
+
 children.each do |child|
   pid, status = Process.waitpid2(child)
   puts "Child #{pid} exited with status #{status}"
