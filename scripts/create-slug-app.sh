@@ -23,7 +23,7 @@ slug_info=$(mktemp)
 curl -s -X POST \
 -H 'Content-Type: application/json' \
 -H 'Accept: application/vnd.heroku+json; version=3' \
--d '{"process_types":{"worker":"ruby wait.rb"}}' \
+-d '{"process_types":{"worker":"/bin/bash -l -c \"ruby wait.rb\""}}' \
 -n https://api.heroku.com/apps/$slug_app/slugs > $slug_info
 blob_url=$(jq -r .blob.url $slug_info)
 slug_id=$(jq -r .id $slug_info)
